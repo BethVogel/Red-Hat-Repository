@@ -5,6 +5,7 @@
 - Pn: treat them all like they are online
 `nmap -T4 -p 1-1000 -A 10.0.0.0`
 		- first 1000 ports
+`nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse IP`
 
 Vuln Options:
 `nmap -oA nmap-vuln -Pn -script vuln -p 80,135,139,445,3389 10.10.220.181`
