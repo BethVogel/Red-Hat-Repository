@@ -24,3 +24,4 @@
 	- linux-exploit-suggester
 	- enum4linux -a IP 
 		- can enumer for other domain information
+  	- autorecon [targets] -v
