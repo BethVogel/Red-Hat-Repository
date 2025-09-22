@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+#recon tool
+#uses sublist3r - credit to Ahmed Aboul-Ela - @aboul3la
+#uses assetfinder
+#
+domain=$1
+#first argument (input)
+
