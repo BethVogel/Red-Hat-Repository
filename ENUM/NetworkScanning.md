@@ -1,6 +1,6 @@
 ## Network scanning
 
-- `netdiscover -r {ip}/24`
+- `netdiscover -r [range]/24`
 - `arp-scan -l [range]`
 - `arp-a`
   - windows or linux, shows ARP cache of the machine (hosts target interacted with recently)
