@@ -1,7 +1,7 @@
 ## Network scanning
 
 - `netdiscover -r {ip}/24`
-- `arp-scan -l`
+- `arp-scan -l [range]`
 - `arp-a`
   - windows or linux, shows ARP cache of the machine (hosts target interacted with recently)
 - `cat /etc/hosts` or `C:\Windows\System32\drivers\etc\hosts`
