@@ -1,4 +1,4 @@
-#### Network scanning
+### Network scanning
 
 - port scanning, vuln scanning, network mapping
 - MAC address - type of device, potential spoofing
@@ -17,7 +17,7 @@
 - Ping from the terminal if need to get current IP
 
 
-#### NMAP
+### NMAP
 
 - `nmap -T4 -p- -A 10.0.0.0`
 		- T4 is speed, -p- scanning all ports, -A scanning everything
@@ -34,7 +34,7 @@
 - **HTTP nmap enum:**
 	- `nmap -script http-enum.nse 0.0.0.0`
 
-#### Vulnerability scanning
+### Vulnerability scanning
 	- metasploit
 	- searchsploit
 	- Nessus
