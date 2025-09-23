@@ -1,4 +1,24 @@
-## NMAP
+#### Network scanning
+
+- port scanning, vuln scanning, network mapping
+- MAC address - type of device, potential spoofing
+- `netdiscover -r [range]/24`
+- `arp-scan -l [range]`
+  - ARP cache of the machine (hosts target interacted with recently)
+- `route`
+- `cat /etc/hosts` or `C:\Windows\System32\drivers\etc\hosts`
+- check for local dns services to see if they are misconfigured or not set up
+  - Windows
+    - `ipconfig /all`
+  - Linux
+    - `nmcli dev show`
+    - `/etc/resolv.confi`
+    - `ip a`
+- Ping from the terminal if need to get current IP
+
+
+#### NMAP
+
 - `nmap -T4 -p- -A 10.0.0.0`
 		- T4 is speed, -p- scanning all ports, -A scanning everything
     - sn: ping scan sweaps an entire network
@@ -14,7 +34,7 @@
 - **HTTP nmap enum:**
 	- `nmap -script http-enum.nse 0.0.0.0`
 
-## Vulnerability scanning
+#### Vulnerability scanning
 	- metasploit
 	- searchsploit
 	- Nessus
