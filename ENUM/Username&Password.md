@@ -2,7 +2,7 @@
 - `exiftool`
 - google image search - reverse-search images
 
-### Website
+### Website OSINT
   - `whois`
   - [BuiltWith](https://builtwith.com)
   - [crt.sh](https://crt.sh/)
