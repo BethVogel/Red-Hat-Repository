@@ -1,8 +1,8 @@
-## Image OSINT
+### Image OSINT
 - `exiftool`
 - google image search - reverse-search images
 
-## Website
+### Website
   - `whois`
   - [BuiltWith](https://builtwith.com)
   - [crt.sh](https://crt.sh/)
@@ -10,7 +10,7 @@
   - [Wayback Machine](https://web.archive.org/)
   - [Wappalyzer](https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/)
 	    
-## Subdomains:
+### Subdomains:
   - `assetfinder url.com`
   - `sublist3r -d url.com`
   - **theHarvester**
@@ -22,7 +22,7 @@
   - `amass enum -d url.com`
   - [crt.sh](https://crt.sh/)
 
-## Email Addresses
+### Email Addresses
 - **Username enumeration**
   - Go to the sites, find names
   - **username-anarchy**
@@ -30,7 +30,7 @@
   - **theHarvester**
     - `theHarvester -d url.com -b all -l 500`
 
-## Passwords
+### Passwords
   - **Dehashed**
   - [HaveIbeenpwnd](https://haveibeenpwned.com/)
   - `cewl` - pulls words from a site that can be used as a password
@@ -53,7 +53,7 @@
     	- can add >> validusernames.txt at the end for it to put them in a file for you
 
 
-## Hash Cracking
+### Hash Cracking
 - **Hash Identifier**
 	- hash-identifier - built in Kali tool to check hashed passwords
 - **hashcat** 
