@@ -75,4 +75,6 @@ cat /etc/cron.deny*
 - [Linuxprivchecker](https://github.com/sleventyeleven/linuxprivchecker)
 - [LinEnum](https://github.com/rebootuser/LinEnum)
 - [PEASS-ng](https://github.com/peass-ng/PEASS-ng)
+- [Hacktricks](https://book.hacktricks.wiki/en/linux-hardening/linux-privilege-escalation-checklist.html)
+- [InternalAllTheThings](https://swisskyrepo.github.io/InternalAllTheThings/redteam/escalation/linux-privilege-escalation/)
 
