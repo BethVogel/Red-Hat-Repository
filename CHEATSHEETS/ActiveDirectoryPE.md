@@ -49,6 +49,9 @@
 - netsh advfirewall firewall dump
 - netsh firewall show state
 - netsh firewall show config
+- netsh firewall set opmode mode=disable
+- netsh advfirewall firewall set opmode mode=disable
+
 ```
 #### Tools
 ```
@@ -63,7 +66,30 @@
 - Windows-exploit-suggester.py
 - Bloodhound
 - crackmapexec/netexec
+  - SMB relay, Kerberoasting, ASREP Roasting
+  - hash passing
+- Impacket all - secrets.py
+- Mitm6
+- mimikatz
+- ldapdomaindump
+- Responder
 - PEASS-ng
+```
+
+#### Unquoted service paths
+```
+CMD line
+wmic service get name,displayname,pathname,startmode |findstr /i "Auto" |findstr /i /v "C:\Windows\" |findstr /i /v """
+wmic service get name,displayname,startmode,pathname | findstr /i /v "C:\Windows\\" |findstr /i /v """
+
+PowerShell
+gwmi -class Win32_Service -Property Name, DisplayName, PathName, StartMode | Where {$_.StartMode -eq "Auto" -and $_.PathName -notlike "C:\Windows*" -and $_.PathName -notlike '"*'} | select PathName,DisplayName,Name
+```
+
+#### AlwaysInstallElevated
+```
+reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
 ```
 
 #### Sites:
