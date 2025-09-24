@@ -7,3 +7,16 @@
   - `hydra -l root -P /usr/share/wordlists/rockyou.txt ftp://{ip} -t 4 -V`
 - search for potential ssh keys
 - use with 80 to 'put' and navigate to file
+
+- Download all files
+  - `wget -m ftp://username:password@host`
+  - `ftp host` OR `ftp username@host`
+ 
+- Commands:
+  -   ls
+  -   binary
+  -   ascii
+  -   put
+  -   get
+  -   mget *
+  -   close
