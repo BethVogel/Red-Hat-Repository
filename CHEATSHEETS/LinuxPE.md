@@ -1,5 +1,16 @@
 ## Linux PE
 
+**Strategy**
+- Checklists - payloadsallthethings, hacktricks
+- Enum Scripts - run tools
+- Kernel Exploits - vulnerabilities in an unpatched system
+- Vulnerable Software - check what is installed
+- User Privileges - sudo, suid, windows token privileges
+- Scheduled tasks - cron jobs or windows scheduled tasks
+- Exposed Credentials - review enum scripts, configuration files, logs, bash_history or PSReadLine in windows
+- SSH Keys
+
+
 **Kernal/file details**
   - network: route, dns
   - System and user info
