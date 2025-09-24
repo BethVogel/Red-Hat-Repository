@@ -5,6 +5,8 @@
 - Enum Scripts - run tools
 - Kernel Exploits - vulnerabilities in an unpatched system
 - Vulnerable Software - check what is installed
+  - `dpkg -l`
+    - look for vulns in all installed software
 - User Privileges - sudo, suid, windows token privileges
 - Scheduled tasks - cron jobs or windows scheduled tasks
 - Exposed Credentials - review enum scripts, configuration files, logs, bash_history or PSReadLine in windows
