@@ -21,7 +21,10 @@
 - create keypair
   - ssh-keygen
 - Can use SCP now
+  - if need a file from something ssh connected to try scp
   - `scp /path/to/source/file.ext username@10.0.0.10:/path/to/destination/file.ext`
+  - `scp <user@machineip>:Filename /directorytodownloadto/`
+
 
  ## Windows
  - Doesnt typically have netcat, wget or curl
