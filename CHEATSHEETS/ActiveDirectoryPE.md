@@ -21,6 +21,8 @@
 - net user babis
 - net localgroup
 - net localgroup administrators
+- C:\Program Files
+  - search for vulns in all installed software
 ```
 
 #### Network Enum
