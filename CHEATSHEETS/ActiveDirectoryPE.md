@@ -61,4 +61,15 @@
   - let this run
 - WinPEAS
 - Windows-exploit-suggester.py
+- Bloodhound
+- crackmapexec/netexec
+- PEASS-ng
+```
+
+#### Sites:
+- [LOLBAS](https://lolbas-project.github.io/#)
+  - GTFObins of windows
+- [hacktricks](https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html)
+- [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md)
+- [Absolomb](https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
 
