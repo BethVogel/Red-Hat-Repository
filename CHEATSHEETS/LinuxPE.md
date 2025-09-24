@@ -1,4 +1,4 @@
-## Linux PE
+## Linux Privilege Escalation
 
 **Strategy**
 - Checklists - payloadsallthethings, hacktricks
@@ -66,4 +66,11 @@ cat /etc/at.deny
 cat /etc/cron.allow
 cat /etc/cron.deny*
 ```
+
+
+### REFERENCES:
+- [GTFObins](https://gtfobins.github.io/)
+- [Linuxprivchecker](https://github.com/sleventyeleven/linuxprivchecker)
+- [LinEnum](https://github.com/rebootuser/LinEnum)
+- [PEASS-ng](https://github.com/peass-ng/PEASS-ng)
 
