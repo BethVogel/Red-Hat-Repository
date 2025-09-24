@@ -23,6 +23,8 @@
 - net localgroup administrators
 - C:\Program Files
   - search for vulns in all installed software
+- sc start
+- sc stop
 ```
 
 #### Network Enum
