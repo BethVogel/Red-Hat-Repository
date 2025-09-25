@@ -11,6 +11,9 @@
 - Scheduled tasks - cron jobs or windows scheduled tasks
 - Exposed Credentials - review enum scripts, configuration files, logs, bash_history or PSReadLine in windows
 - SSH Keys
+  - `find / -name authorized_keys 2>/dev/null`
+  - `find / -name id_rsa 2>/dev/null`
+  - keygen
 
 
 **Kernal/file details**
